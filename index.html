@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bocados Locos - Heladería & Cafetería</title>
+    <meta name="description" content="Bienvenido a Bocados Locos - Heladería y Cafetería artesanal">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* ── WIZARD MODAL STYLES ── */
+        .wiz-modal{align-items:flex-end;padding:0}
+        .wiz-modal-content{width:100%;max-width:100%;border-radius:28px 28px 0 0;border-bottom:none;display:flex;flex-direction:column;height:90vh;max-height:90vh;min-height:500px;background:var(--bg-light);animation:slideUpWiz .4s cubic-bezier(.4,0,.2,1)}
+        @keyframes slideUpWiz{from{transform:translateY(100px);opacity:0}to{transform:translateY(0);opacity:1}}
+        @media(min-width:700px){.wiz-modal{align-items:center;padding:20px}.wiz-modal-content{max-width:640px;height:auto;max-height:88vh;border-radius:28px;animation:scaleInWiz .35s cubic-bezier(.4,0,.2,1)}}
+        @keyframes scaleInWiz{from{opacity:0;transform:scale(0.9)}to{opacity:1;transform:scale(1)}}
+        .wiz-tab-bar-wrap{background:linear-gradient(135deg,var(--mint) 0%,var(--bg-light) 100%);border-bottom:2px solid var(--pink);overflow:hidden;flex-shrink:0}
+        .wiz-tab-bar{display:flex;gap:3px;overflow-x:auto;padding:12px 14px;scrollbar-width:none}
+        .wiz-tab-bar::-webkit-scrollbar{display:none}
+        .wiz-tab{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:5px;padding:12px 20px;border-radius:16px;border:2px solid transparent;background:rgba(255,255,255,0.6);color:var(--text-dark);cursor:pointer;transition:all .3s;position:relative;font-family:'Nunito',sans-serif;min-width:78px}
+        .wiz-tab:hover{background:rgba(255,182,193,0.3);border-color:var(--pink);transform:translateY(-2px)}
+        .wiz-tab.active{background:linear-gradient(135deg,var(--pink) 0%,var(--coral) 100%);border-color:var(--pink);color:#fff;box-shadow:0 4px 20px rgba(255,182,193,0.5)}
+        .wiz-tab-icon{font-size:1.5rem;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.1))}
+        .wiz-tab-name{font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;font-weight:700;white-space:nowrap}
+        .wiz-tab-badge{position:absolute;top:4px;right:4px;background:var(--coral);color:#fff;font-size:.58rem;font-weight:700;min-width:18px;height:18px;border-radius:50px;display:flex;align-items:center;justify-content:center;padding:0 4px;line-height:1;box-shadow:0 2px 8px rgba(255,127,80,0.5)}
+        .wiz-tab-badge:not(.hidden){animation:popBadge .3s ease}
+        @keyframes popBadge{from{transform:scale(0)}to{transform:scale(1)}}
+        .wiz-panels-wrap{flex:1;overflow-y:auto;min-height:0;scrollbar-width:thin;scrollbar-color:var(--lavender) transparent;background:var(--bg-light)}
+        .wiz-panel{padding:12px 16px}
+        .wiz-products{display:flex;flex-direction:column;gap:8px}
+        .wiz-product-row{display:grid;grid-template-columns:60px 1fr auto;grid-template-rows:auto auto;align-items:center;gap:10px;padding:12px 16px;border-radius:20px;border:2px solid rgba(255,182,193,0.3);background:linear-gradient(135deg,rgba(255,255,255,0.8) 0%,rgba(240,248,255,0.6) 100%);transition:all .3s}
+        .wiz-product-row:hover{border-color:var(--pink);box-shadow:0 4px 20px rgba(255,182,193,0.3)}
+        .wiz-row-active{border-color:var(--coral)!important;background:linear-gradient(135deg,rgba(255,127,80,0.15) 0%,rgba(255,255,255,0.8) 100%)!important}
+        .wiz-product-img,.wiz-product-icon{width:60px;height:60px;grid-row:1/3;grid-column:1;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:2.5rem}
+        .wiz-product-img{object-fit:cover;border-radius:16px;border:2px solid var(--mint)}
+        .wiz-product-icon{background:rgba(255,255,255,0.8);border-radius:16px;border:2px solid var(--mint)}
+        .wiz-product-info{grid-row:1;grid-column:2;min-width:0;display:flex;flex-direction:column;gap:4px}
+        .wiz-product-name{font-family:'Nunito',sans-serif;font-size:1.05rem;color:var(--text-dark);font-weight:700;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+        .wiz-product-desc{font-size:.8rem;color:var(--text-muted);line-height:1.4}
+        .wiz-product-price{grid-row:1;grid-column:3;font-family:'Fredoka',sans-serif;font-size:.95rem;color:var(--coral);font-weight:600;white-space:nowrap}
+        .wiz-qty-ctrl{grid-row:2;grid-column:2/4;display:flex;align-items:center;gap:10px;flex-shrink:0;justify-self:end}
+        .wiz-qty-btn{width:36px;height:36px;border-radius:50%;border:2px solid var(--pink);background:transparent;color:var(--pink);font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .25s;line-height:1;font-weight:600}
+        .wiz-qty-btn.wiz-plus{background:linear-gradient(135deg,var(--coral) 0%,var(--pink) 100%);border-color:var(--coral);color:#fff;box-shadow:0 4px 15px rgba(255,127,80,0.4)}
+        .wiz-qty-btn.wiz-plus:hover{transform:scale(1.1);box-shadow:0 6px 25px rgba(255,127,80,0.6)}
+        .wiz-qty-btn.wiz-minus:hover{border-color:var(--coral);color:var(--coral);transform:scale(1.1)}
+        .wiz-qty-num{font-family:'Fredoka',sans-serif;font-size:1.2rem;min-width:24px;text-align:center;color:var(--lavender);font-weight:600}
+        .wiz-cart-footer{flex-shrink:0;border-top:2px solid var(--pink);background:linear-gradient(180deg,var(--bg-light) 0%,var(--mint) 100%);padding:16px 22px 24px;display:flex;flex-direction:column;gap:12px}
+        .wiz-cart-header-row{display:flex;justify-content:space-between;align-items:center}
+        .wiz-cart-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted);font-weight:700;display:flex;align-items:center;gap:8px;font-family:'Nunito',sans-serif}
+        .wiz-cart-label i{color:var(--pink)}
+        .wiz-cart-total{font-family:'Pacifico',cursive;font-size:1.2rem;color:var(--coral);text-shadow:0 2px 4px rgba(255,127,80,0.2)}
+        .wiz-cart-preview{display:flex;flex-wrap:wrap;gap:8px;min-height:32px}
+        .wiz-cart-chip{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--pink) 0%,var(--lavender) 100%);border-radius:50px;padding:5px 12px 5px 14px;font-size:.75rem;color:#fff;animation:chipInWiz .25s ease;box-shadow:0 3px 12px rgba(255,182,193,0.4)}
+        @keyframes chipInWiz{from{transform:scale(0.8);opacity:0}to{transform:scale(1);opacity:1}}
+        .wiz-cart-chip button{background:none;border:none;color:rgba(255,255,255,0.8);cursor:pointer;font-size:.9rem;line-height:1;padding:0;transition:color .2s}
+        .wiz-cart-chip button:hover{color:#fff}
+        .wiz-empty-msg{font-size:.85rem;color:var(--text-muted);font-style:italic;font-family:'Nunito',sans-serif}
+        .wiz-confirm-btn{background:linear-gradient(135deg,var(--coral) 0%,var(--pink) 100%);border:none;padding:16px 28px;border-radius:50px;color:#fff;font-family:'Nunito',sans-serif;font-size:.88rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;box-shadow:0 6px 25px rgba(255,127,80,0.4)}
+        .wiz-confirm-btn:hover{transform:translateY(-2px);box-shadow:0 10px 35px rgba(255,127,80,0.5)}
+        .wiz-progress-bar{padding:8px 20px;background:linear-gradient(90deg,var(--mint) 0%,var(--lavender) 50%,var(--pink) 100%);border-bottom:1px solid rgba(255,255,255,0.5)}
+        .wiz-progress-text{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:6px;font-weight:700}
+        .wiz-progress-dots{display:flex;gap:6px;flex-wrap:wrap}
+        .wiz-progress-dot{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,0.5);transition:all .35s;position:relative}
+        .wiz-progress-dot::before{content:'';position:absolute;inset:2px;border-radius:50%;background:transparent;transition:all .35s}
+        .wiz-progress-dot.done{background:var(--lavender);box-shadow:0 0 10px rgba(186,149,255,0.5)}
+        .wiz-progress-dot.active{background:var(--coral);box-shadow:0 0 15px rgba(255,127,80,0.6);transform:scale(1.2)}
+        .wiz-progress-dot.active::before{background:rgba(255,255,255,0.4)}
+        .wiz-nav-btns{display:flex;gap:12px}
+        .wiz-nav-back{flex:0 0 auto;background:linear-gradient(135deg,var(--mint) 0%,var(--lavender) 100%)!important;color:#fff!important;border:2px solid var(--lavender)!important;padding:16px 24px!important;border-radius:50px!important;font-family:'Nunito',sans-serif!important;font-size:.82rem!important;font-weight:700!important;cursor:pointer!important;transition:all .3s!important;box-shadow:0 4px 15px rgba(186,149,255,0.3)}
+        .wiz-nav-back:hover{transform:translateY(-2px)!important;box-shadow:0 8px 25px rgba(186,149,255,0.4)!important}
+        .wiz-nav-btn{background:linear-gradient(135deg,var(--coral) 0%,var(--pink) 100%);border:none;padding:16px 28px;border-radius:50px;color:#fff;font-family:'Nunito',sans-serif;font-size:.88rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:10px;flex:1;box-shadow:0 6px 25px rgba(255,127,80,0.4)}
+        .wiz-nav-btn:hover{transform:translateY(-2px);box-shadow:0 10px 35px rgba(255,127,80,0.5)}
+        #wizNextBtn{flex:1}
+        .wiz-header{background:linear-gradient(135deg,var(--mint) 0%,var(--lavender) 100%);border-bottom:2px solid var(--pink)}
+        .wiz-header h2{font-family:'Pacifico',cursive!important;color:var(--coral)!important;text-shadow:0 2px 8px rgba(255,127,80,0.3)}
+        .wiz-header h2 i{color:var(--pink)!important}
+    </style>
+</head>
+<body>
+    <!-- Floating Decorations -->
+    <div class="floating-decorations">
+        <div class="float-item" style="--color:#FFB6C1;--delay:0s;--x:5%">🍦</div>
+        <div class="float-item" style="--color:#DDA0DD;--delay:0.5s;--x:15%">☕</div>
+        <div class="float-item" style="--color:#98FB98;--delay:1s;--x:25%">🧁</div>
+        <div class="float-item" style="--color:#FFB6C1;--delay:1.5s;--x:35%">🍩</div>
+        <div class="float-item" style="--color:#DDA0DD;--delay:2s;--x:45%">🍨</div>
+        <div class="float-item" style="--color:#98FB98;--delay:2.5s;--x:55%">🥤</div>
+        <div class="float-item" style="--color:#FFB6C1;--delay:3s;--x:65%">🍪</div>
+        <div class="float-item" style="--color:#DDA0DD;--delay:3.5s;--x:75%">🎂</div>
+        <div class="float-item" style="--color:#98FB98;--delay:4s;--x:85%">🍰</div>
+        <div class="float-item" style="--color:#FFB6C1;--delay:4.5s;--x:95%">🍧</div>
+    </div>
+
+    <header class="hero">
+        <div class="hero-pattern"></div>
+        <div class="hero-scoop-left">
+            <i class="fas fa-ice-cream"></i>
+        </div>
+        <div class="hero-scoop-right">
+            <i class="fas fa-mug-hot"></i>
+        </div>
+        <div class="hero-content">
+            <div class="sprinkle-left">✨</div>
+            <div class="sprinkle-right">✨</div>
+            <h1 id="restaurant-name">Bocados Locos</h1>
+            <p id="restaurant-description">Heladería & Dulcería</p>
+            <div class="status-badge" id="openingHours">
+                <i class="fas fa-clock"></i> Abierto: 10:00 AM - 10:00 PM
+            </div>
+        </div>
+    </header>
+
+    <nav class="category-nav" id="categoryNav">
+        <div class="container scroll-x" id="categoryList">
+            <button class="cat-btn active" data-category="all">
+                <i class="fas fa-star"></i> Todos
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="controls-row">
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Buscar delicia...">
+            </div>
+            <div class="filter-controls">
+                <select id="sortSelect" class="control-select">
+                    <option value="none">Ordenar...</option>
+                    <option value="price-low">Precio ↑</option>
+                    <option value="price-high">Precio ↓</option>
+                    <option value="name">Nombre A-Z</option>
+                </select>
+                <div class="view-toggles">
+                    <button id="gridBtn" class="view-btn active"><i class="fas fa-th"></i></button>
+                    <button id="listBtn" class="view-btn"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="wizard-header">
+            <button id="startWizard" class="btn-assistant">
+                <i class="fas fa-magic"></i> Asistente de Pedido
+            </button>
+        </div>
+    </div>
+
+    <main class="container">
+        <section id="offersContainer" class="hidden">
+            <h2 class="section-title">
+                <span>⭐</span> Ofertas Especiales
+            </h2>
+            <div class="offers-grid" id="offersGrid"></div>
+        </section>
+        <section id="menuSection" class="hidden">
+            <h2 class="section-title" id="currentCategoryTitle">
+                <span>🍦</span> Menú Completo
+            </h2>
+            <div class="products-grid" id="productsGrid"></div>
+        </section>
+    </main>
+
+    <div id="cartButton" class="cart-floating-btn hide-cart">
+        <div class="cart-info">
+            <span id="cartCount">0</span>
+            <i class="fas fa-shopping-bag"></i>
+        </div>
+        <div class="cart-total-info">
+            <span class="label">Total</span>
+            <span id="cartTotalPrice">$0</span>
+        </div>
+    </div>
+
+    <div id="overlay" class="overlay"></div>
+
+    <!-- ASISTENTE DE PEDIDO -->
+    <div id="wizardModal" class="modal wiz-modal">
+        <div class="modal-content wiz-modal-content">
+            <div class="modal-header wiz-header">
+                <h2><i class="fas fa-magic"></i> Asistente de Pedido</h2>
+                <button class="modal-close" onclick="closeWizard()">✕</button>
+            </div>
+            <div class="wiz-progress-bar">
+                <div class="wiz-progress-text">
+                    <span id="wizProgressLabel">Categoría <span id="wizCurrentCat">1</span> de <span id="wizTotalCats">0</span></span>
+                </div>
+                <div class="wiz-progress-dots" id="wizProgressDots"></div>
+            </div>
+            <div class="wiz-tab-bar-wrap">
+                <div class="wiz-tab-bar" id="wizTabBar"></div>
+            </div>
+            <div class="wiz-panels-wrap" id="wizPanels"></div>
+            <div class="wiz-cart-footer" id="wizCartFooter">
+                <div class="wiz-cart-header-row">
+                    <span class="wiz-cart-label"><i class="fas fa-shopping-bag"></i> Tu selección <span id="wizCartCountBadge"></span></span>
+                    <span class="wiz-cart-total" id="wizCartTotal"></span>
+                </div>
+                <div class="wiz-cart-preview" id="wizCartPreview">
+                    <span class="wiz-empty-msg">Aún no has añadido nada</span>
+                </div>
+                <div class="wiz-nav-btns">
+                    <button class="wiz-nav-back hidden" id="wizBackBtn" onclick="wizardPrevCategory()">
+                        <i class="fas fa-arrow-left"></i> Anterior
+                    </button>
+                    <button class="wiz-confirm-btn" id="wizNextBtn" onclick="wizardNextCategory()">
+                        <span id="wizNextBtnText">Siguiente <i class="fas fa-arrow-right"></i></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resumen final -->
+    <div id="summaryModal" class="modal">
+        <div class="modal-content summary-view">
+            <div class="summary-header-pattern"></div>
+            <div class="modal-header summary-modal-header">
+                <h2><i class="fas fa-receipt"></i> Tu Pedido</h2>
+                <button class="modal-close" onclick="closeSummary()">✕</button>
+            </div>
+            <div id="summaryContent" class="summary-body"></div>
+            <div class="summary-actions">
+                <button class="btn-cancel" onclick="cancelOrder()">
+                    <i class="fas fa-times-circle"></i> Cancelar nota
+                </button>
+                <button class="btn-share" onclick="shareOrder()">
+                    <i class="fas fa-share-alt"></i> Compartir / Copiar
+                </button>
+                <p class="summary-tip">Muestra este resumen al mostrar tu orden 🍦</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
