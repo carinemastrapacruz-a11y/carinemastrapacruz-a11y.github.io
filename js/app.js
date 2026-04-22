@@ -9,7 +9,7 @@ let currentSort = 'none';
 
 async function init() {
     try {
-        const response = await fetch('data/menu.json');
+        const response = await fetch('data/menu.json?v=' + Date.now());
         menuData = await response.json();
 
         injectCategoriesContainer();
@@ -52,9 +52,9 @@ function getSortedProducts() {
         );
     }
 
-    if (currentSort === 'price-low')       products.sort((a, b) => a.price - b.price);
+    if (currentSort === 'price-low') products.sort((a, b) => a.price - b.price);
     else if (currentSort === 'price-high') products.sort((a, b) => b.price - a.price);
-    else if (currentSort === 'name')       products.sort((a, b) => a.name.localeCompare(b.name));
+    else if (currentSort === 'name') products.sort((a, b) => a.name.localeCompare(b.name));
 
     return products;
 }
@@ -82,9 +82,9 @@ function renderProducts() {
         card.innerHTML = `
             <div class="product-image-container">
                 ${hasImage
-                    ? `<img src="${imgSrc}" alt="${imgAlt}" class="product-card-img" loading="lazy" onerror="this.parentElement.innerHTML='<span class=\\'placeholder-icon\\'>${catIcon}</span>'">`
-                    : `<span class="placeholder-icon">${catIcon}</span>`
-                }
+                ? `<img src="${imgSrc}" alt="${imgAlt}" class="product-card-img" loading="lazy" onerror="this.parentElement.innerHTML='<span class=\\'placeholder-icon\\'>${catIcon}</span>'">`
+                : `<span class="placeholder-icon">${catIcon}</span>`
+            }
             </div>
             <div class="product-info">
                 <div class="product-header">
@@ -124,14 +124,14 @@ function showProductsView(catId) {
 }
 
 function renderCategories() {
-    const nav     = document.getElementById('categoryList');
-    const grid    = document.getElementById('categoriesGrid');
+    const nav = document.getElementById('categoryList');
+    const grid = document.getElementById('categoriesGrid');
 
     nav.innerHTML = `
         <button class="cat-btn active" data-category="all">Categorías</button>
         ${menuData.categories.map(cat =>
-            `<button class="cat-btn" data-category="${cat.id}">${cat.icon} ${cat.name}</button>`
-        ).join('')}
+        `<button class="cat-btn" data-category="${cat.id}">${cat.icon} ${cat.name}</button>`
+    ).join('')}
     `;
 
     grid.innerHTML = menuData.categories.map(cat => `
@@ -155,7 +155,7 @@ function toggleView(mode) {
 
 function addToCart(productId, fromWizard = false) {
     const product = menuData.products.find(p => p.id === productId);
-    const item    = cart.find(i => i.id === productId);
+    const item = cart.find(i => i.id === productId);
     if (item) item.quantity++; else cart.push({ ...product, quantity: 1 });
     updateCartUI();
 
@@ -190,9 +190,9 @@ function changeQty(id, delta) {
     const productId = typeof id === 'string' ? parseInt(id) : id;
     const product = menuData.products.find(p => p.id === productId);
     if (!product) return;
-    
+
     let item = cart.find(i => i.id === productId);
-    
+
     if (!item) {
         if (delta > 0) {
             cart.push({ ...product, quantity: 1 });
@@ -201,7 +201,7 @@ function changeQty(id, delta) {
         item.quantity += delta;
         if (item.quantity <= 0) cart = cart.filter(i => i.id !== productId);
     }
-    
+
     updateCartUI();
     if (document.getElementById('wizardModal').classList.contains('open')) {
         refreshWizardCart();
@@ -213,7 +213,7 @@ function changeQty(id, delta) {
 function updateCartUI() {
     const count = cart.reduce((s, i) => s + i.quantity, 0);
     const total = cart.reduce((s, i) => s + (i.price * i.quantity), 0);
-    document.getElementById('cartCount').textContent     = count;
+    document.getElementById('cartCount').textContent = count;
     document.getElementById('cartTotalPrice').textContent = `$${total.toLocaleString()}`;
     document.getElementById('cartButton').classList.toggle('hide-cart', count === 0);
 }
@@ -222,7 +222,7 @@ function renderCartItems() {
     const container = document.getElementById('cartItems');
     const orderCode = Math.floor(Math.random() * 9000) + 1000;
     const sum = cart.reduce((s, i) => s + i.price * i.quantity, 0);
-    
+
     container.innerHTML = cart.length
         ? `
             <div class="drawer-summary">
@@ -286,13 +286,13 @@ function buildWizardProgress() {
     const dotsContainer = document.getElementById('wizProgressDots');
     const totalSpan = document.getElementById('wizTotalCats');
     const progressLabel = document.getElementById('wizProgressLabel');
-    
+
     totalSpan.textContent = menuData.categories.length;
-    
+
     dotsContainer.innerHTML = menuData.categories.map((cat, i) => `
         <div class="wiz-progress-dot" id="wizdot-${i}" data-index="${i}"></div>
     `).join('');
-    
+
     updateWizardProgress();
 }
 
@@ -306,14 +306,14 @@ function updateWizardProgress() {
             dot.classList.add('active');
         }
     });
-    
-    document.getElementById('wizProgressLabel').innerHTML = 
+
+    document.getElementById('wizProgressLabel').innerHTML =
         `Categoría ${wizardCurrentCatIndex + 1} de ${menuData.categories.length}`;
 }
 
 function buildWizardTabs() {
-    const tabBar   = document.getElementById('wizTabBar');
-    const panels   = document.getElementById('wizPanels');
+    const tabBar = document.getElementById('wizTabBar');
+    const panels = document.getElementById('wizPanels');
 
     tabBar.innerHTML = menuData.categories.map(cat => `
         <button class="wiz-tab" id="wiztab-${cat.id}" onclick="switchWizardTab('${cat.id}')">
@@ -330,13 +330,13 @@ function buildWizardTabs() {
             <div class="wiz-panel hidden" id="wizpanel-${cat.id}">
                 <div class="wiz-products">
                     ${products.map(p => {
-                        const hasImage = p.image && p.image.trim() !== '';
-                        return `
+            const hasImage = p.image && p.image.trim() !== '';
+            return `
                         <div class="wiz-product-row" id="wizrow-${p.id}" onclick="toggleProductDesc(${p.id})">
                             ${hasImage
-                                ? `<img src="${p.image}" alt="${p.name}" class="wiz-product-img" loading="lazy" onerror="handleWizImgError(this, '${catIcon}')">`
-                                : `<div class="wiz-product-icon"><span>${catIcon}</span></div>`
-                            }
+                    ? `<img src="${p.image}" alt="${p.name}" class="wiz-product-img" loading="lazy" onerror="handleWizImgError(this, '${catIcon}')">`
+                    : `<div class="wiz-product-icon"><span>${catIcon}</span></div>`
+                }
                             <div class="wiz-product-info">
                                 <span class="wiz-product-name">${p.name}</span>
                                 <span class="wiz-product-desc hidden" id="wizdesc-${p.id}">${p.description}</span>
@@ -349,7 +349,7 @@ function buildWizardTabs() {
                             </div>
                         </div>
                     `;
-                    }).join('')}
+        }).join('')}
                 </div>
             </div>
         `;
@@ -374,7 +374,7 @@ function toggleProductDesc(productId) {
 
 function switchWizardTab(catId) {
     wizardActiveCat = catId;
-    
+
     // Update index
     const catIndex = menuData.categories.findIndex(c => c.id === catId);
     if (catIndex !== -1) wizardCurrentCatIndex = catIndex;
@@ -396,7 +396,7 @@ function switchWizardTab(catId) {
     menuData.products.filter(p => p.category === catId).forEach(p => {
         updateWizardProductRow(p.id);
     });
-    
+
     // Update progress and nav buttons
     updateWizardProgress();
     updateWizardNavButtons();
@@ -404,7 +404,7 @@ function switchWizardTab(catId) {
 
 function wizardNextCategory() {
     const totalCats = menuData.categories.length;
-    
+
     if (wizardCurrentCatIndex < totalCats - 1) {
         // Go to next category
         wizardCurrentCatIndex++;
@@ -429,10 +429,10 @@ function updateWizardNavButtons() {
     const nextBtn = document.getElementById('wizNextBtn');
     const nextBtnText = document.getElementById('wizNextBtnText');
     const totalCats = menuData.categories.length;
-    
+
     // Back button visibility
     backBtn.classList.toggle('hidden', wizardCurrentCatIndex === 0);
-    
+
     // Next button text
     if (wizardCurrentCatIndex === totalCats - 1) {
         nextBtnText.innerHTML = '<i class="fas fa-clipboard-list"></i> Ver Resumen';
@@ -451,12 +451,12 @@ function wizChangeQty(productId, delta) {
 
 function updateWizardProductRow(productId) {
     const pid = typeof productId === 'string' ? parseInt(productId) : productId;
-    const item   = cart.find(i => i.id === pid);
-    const qty    = item ? item.quantity : 0;
-    const minus  = document.querySelector(`#wizqty-${pid} .wiz-minus`);
-    const num    = document.getElementById(`wiznum-${pid}`);
-    const row    = document.getElementById(`wizrow-${pid}`);
-    const plus   = document.querySelector(`#wizqty-${pid} .wiz-plus`);
+    const item = cart.find(i => i.id === pid);
+    const qty = item ? item.quantity : 0;
+    const minus = document.querySelector(`#wizqty-${pid} .wiz-minus`);
+    const num = document.getElementById(`wiznum-${pid}`);
+    const row = document.getElementById(`wizrow-${pid}`);
+    const plus = document.querySelector(`#wizqty-${pid} .wiz-plus`);
 
     if (!num) return;
 
@@ -489,12 +489,12 @@ function updateWizardCategoryBadges() {
 }
 
 function refreshWizardCart() {
-    const footer  = document.getElementById('wizCartFooter');
+    const footer = document.getElementById('wizCartFooter');
     const preview = document.getElementById('wizCartPreview');
-    const total   = document.getElementById('wizCartTotal');
+    const total = document.getElementById('wizCartTotal');
     const countBadge = document.getElementById('wizCartCountBadge');
-    const count   = cart.reduce((s, i) => s + i.quantity, 0);
-    const sum     = cart.reduce((s, i) => s + i.price * i.quantity, 0);
+    const count = cart.reduce((s, i) => s + i.quantity, 0);
+    const sum = cart.reduce((s, i) => s + i.price * i.quantity, 0);
 
     if (count === 0) {
         preview.innerHTML = `<span class="wiz-empty-msg">Aún no has añadido nada</span>`;
@@ -517,9 +517,9 @@ function wizardGenerateSummary() {
         alert('Añade al menos un producto antes de ver el resumen.');
         return;
     }
-    
+
     closeWizard();
-    
+
     const sum = cart.reduce((s, i) => s + i.price * i.quantity, 0);
     let html = `
         <div class="summary-list">
@@ -545,7 +545,7 @@ function wizardConfirm() {
 // ── Legacy Wizard shims (kept for HTML onclick refs) ─────────
 function openWizardLegacy() { openWizard(); }
 function closeWizardLegacy() { closeWizard(); }
-function nextStep() {}
+function nextStep() { }
 function generateSummary() {
     if (cart.length === 0) { alert('El carrito está vacío'); return; }
     const sum = cart.reduce((s, i) => s + i.price * i.quantity, 0);
@@ -566,7 +566,7 @@ function generateSummary() {
     document.getElementById('summaryModal').classList.add('open');
     document.getElementById('overlay').classList.add('show');
 }
-function closeSummary() { 
+function closeSummary() {
     document.getElementById('summaryModal').classList.remove('open');
     document.getElementById('overlay').classList.remove('show');
 }
@@ -576,27 +576,27 @@ function cancelOrder() {
     cart = [];
     updateCartUI();
     closeSummary();
-    
+
     const wizardModal = document.getElementById('wizardModal');
     if (wizardModal && wizardModal.classList.contains('open')) {
         menuData.products.forEach(p => updateWizardProductRow(p.id));
         refreshWizardCart();
         updateWizardCategoryBadges();
     }
-    
+
     document.getElementById('summaryModal').classList.remove('open');
     document.getElementById('overlay').classList.remove('show');
 }
 function shareOrder() {
-    const content  = document.getElementById('summaryContent').innerText;
+    const content = document.getElementById('summaryContent').innerText;
     const shareData = { title: 'Mi Pedido', text: content, url: window.location.href };
-    
+
     // Intentar usar Web Share API primero (móviles)
     if (navigator.share) {
-        navigator.share(shareData).catch(() => {});
+        navigator.share(shareData).catch(() => { });
         return;
     }
-    
+
     // Fallback: copiar al portapapeles
     if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(content).then(() => {
