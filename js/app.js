@@ -32,7 +32,13 @@ function injectCategoriesContainer() {
 
 function loadRestaurantInfo() {
     document.getElementById('restaurant-name').textContent = menuData.restaurant.name;
+    document.getElementById('restaurant-description').textContent = menuData.restaurant.description;
     document.title = menuData.restaurant.name;
+
+    if (menuData.restaurant.openingHours) {
+        document.getElementById('openingHours').innerHTML =
+            `<i class="fas fa-clock"></i> Abierto: ${menuData.restaurant.openingHours}`;
+    }
 }
 
 // ── Menu Rendering & Filtering ──────────────────────────────
