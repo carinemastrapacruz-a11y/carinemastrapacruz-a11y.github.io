@@ -1,151 +1,127 @@
 {
     "store": {
-        "name": "Joyería Cary",
-        "description_es": "mi descripción ",
+        "name": "Luxe Joyería",
+        "description_es": "Exclusividad y Brillo en cada detalle",
         "description_en": "Exclusivity and Brilliance in every detail",
-        "whatsapp": "54267103",
+        "whatsapp": "+1234567890",
         "address": "Calle Real 123, Madrid, España",
         "location_url": "https://goo.gl/maps/example",
         "owner_contact": "+1234567891",
-        "currency": "USD",
-        "announcement": "mi amigo"
+        "announcement_es": "¡Envío gratis en compras superiores a $1500!",
+        "announcement_en": "Free shipping on orders over $1500!"
     },
     "categories": [
         {
             "id": "anillos",
+            "icon": "💍",
             "name_es": "Anillos",
-            "name_en": "Rings",
-            "icon": "💍"
+            "name_en": "Rings"
         },
         {
             "id": "collares",
+            "icon": "📿",
             "name_es": "Collares",
-            "name_en": "Necklaces",
-            "icon": "📿"
+            "name_en": "Necklaces"
         },
         {
             "id": "pulseras",
+            "icon": "⌚",
             "name_es": "Pulseras",
-            "name_en": "Bracelets",
-            "icon": "⌚"
+            "name_en": "Bracelets"
         },
         {
             "id": "pendientes",
+            "icon": "✨",
             "name_es": "Pendientes",
-            "name_en": "Earrings",
-            "icon": "✨"
+            "name_en": "Earrings"
         },
         {
             "id": "relojes",
+            "icon": "🕒",
             "name_es": "Relojes",
-            "name_en": "Watches",
-            "icon": "🕒"
+            "name_en": "Watches"
         }
     ],
     "products": [
         {
             "id": 1,
             "category": "anillos",
+            "price": 1200,
+            "image": "images/anillo1.webp",
             "name_es": "Anillo de Diamante Eterno",
             "name_en": "Eternal Diamond Ring",
-            "description_es": "",
-            "description_en": "",
-            "price": 1200.0,
-            "stock": 10,
-            "is_offer": false,
-            "is_deal_of_day": false,
-            "image": "images/anillo1.webp"
+            "desc_es": "Oro blanco de 18k con diamante central de alta pureza.",
+            "desc_en": "18k white gold with central high-purity diamond."
         },
         {
             "id": 2,
             "category": "anillos",
+            "price": 2500,
+            "image": "images/anillo2.webp",
             "name_es": "Alianza de Oro Rosa",
             "name_en": "Rose Gold Wedding Band",
-            "description_es": "",
-            "description_en": "",
-            "price": 2500.0,
-            "stock": 0,
-            "is_offer": false,
-            "is_deal_of_day": false,
-            "image": "images/anillo2.webp"
+            "desc_es": "Diseño clásico y elegante, acabado pulido.",
+            "desc_en": "Classic and elegant design, polished finish."
         },
         {
             "id": 3,
             "category": "collares",
+            "price": 3800,
+            "image": "images/collar1.webp",
             "name_es": "Collar de Perlas Australianas",
             "name_en": "Australian Pearl Necklace",
-            "description_es": "",
-            "description_en": "",
-            "price": 3800.0,
-            "stock": 0,
-            "is_offer": false,
-            "is_deal_of_day": false,
-            "image": "images/collar1.webp"
+            "desc_es": "Perlas naturales con cierre de seguridad en plata.",
+            "desc_en": "Natural pearls with silver safety clasp."
         },
         {
             "id": 4,
             "category": "collares",
+            "price": 1500,
+            "image": "images/collar2.webp",
             "name_es": "Gargantilla de Zafiro",
             "name_en": "Sapphire Choker",
-            "description_es": "",
-            "description_en": "",
-            "price": 1500.0,
-            "stock": 0,
-            "is_offer": false,
-            "is_deal_of_day": false,
-            "image": "images/collar2.webp"
+            "desc_es": "Piedra preciosa tallada a mano en engaste invisible.",
+            "desc_en": "Hand-cut precious stone in an invisible setting."
         },
         {
             "id": 5,
             "category": "pulseras",
+            "price": 950,
+            "image": "images/pulsera1.webp",
             "name_es": "Pulsera Tennis",
             "name_en": "Tennis Bracelet",
-            "description_es": "",
-            "description_en": "",
-            "price": 950.0,
-            "stock": 0,
-            "is_offer": false,
-            "is_deal_of_day": false,
-            "image": "images/pulsera1.webp"
+            "desc_es": "Hilera continua de finos cristales engarzados.",
+            "desc_en": "Continuous row of fine set crystals."
         },
         {
             "id": 6,
             "category": "pendientes",
+            "price": 600,
+            "image": "images/pendientes1.webp",
             "name_es": "Aros Solitarios",
             "name_en": "Solitary Hoop Earrings",
-            "description_es": "",
-            "description_en": "",
-            "price": 600.0,
-            "stock": 0,
-            "is_offer": false,
-            "is_deal_of_day": false,
-            "image": "images/pendientes1.webp"
+            "desc_es": "Simplicidad y brillo diario en oro amarillo.",
+            "desc_en": "Simplicity and daily sparkle in yellow gold."
         },
         {
             "id": 7,
             "category": "relojes",
+            "price": 5000,
+            "image": "images/reloj1.webp",
             "name_es": "Reloj Chrono Elite",
             "name_en": "Elite Chrono Watch",
-            "description_es": "",
-            "description_en": "",
-            "price": 5000.0,
-            "stock": 0,
-            "is_offer": false,
-            "is_deal_of_day": false,
-            "image": "images/reloj1.webp"
+            "desc_es": "Movimiento suizo, correa de piel genuina.",
+            "desc_en": "Swiss movement, genuine leather strap."
         },
         {
             "id": 8,
             "category": "relojes",
+            "price": 12000,
+            "image": "images/reloj2.webp",
             "name_es": "Lujo Edición Oro",
             "name_en": "Gold Edition Luxury",
-            "description_es": "",
-            "description_en": "",
-            "price": 12000.0,
-            "stock": 0,
-            "is_offer": false,
-            "is_deal_of_day": false,
-            "image": "images/reloj2.webp"
+            "desc_es": "Bañado en oro de 24k, cristal de zafiro irrayable.",
+            "desc_en": "24k gold bath, scratch-resistant sapphire crystal."
         }
     ]
 }
