@@ -61,7 +61,10 @@
             "name_es": "Alianza de Oro Rosa",
             "name_en": "Rose Gold Wedding Band",
             "desc_es": "Diseño clásico y elegante, acabado pulido.",
-            "desc_en": "Classic and elegant design, polished finish."
+            "desc_en": "Classic and elegant design, polished finish.",
+            "is_offer": true,
+            "discount_price": 2100,
+            "is_deal_of_day": true
         },
         {
             "id": 3,
@@ -91,7 +94,10 @@
             "name_es": "Pulsera Tennis",
             "name_en": "Tennis Bracelet",
             "desc_es": "Hilera continua de finos cristales engarzados.",
-            "desc_en": "Continuous row of fine set crystals."
+            "desc_en": "Continuous row of fine set crystals.",
+            "is_offer": true,
+            "discount_price": 760,
+            "is_deal_of_day": true
         },
         {
             "id": 6,
@@ -121,7 +127,9 @@
             "name_es": "Lujo Edición Oro",
             "name_en": "Gold Edition Luxury",
             "desc_es": "Bañado en oro de 24k, cristal de zafiro irrayable.",
-            "desc_en": "24k gold bath, scratch-resistant sapphire crystal."
+            "desc_en": "24k gold bath, scratch-resistant sapphire crystal.",
+            "is_offer": true,
+            "discount_price": 10800
         }
     ]
 }
