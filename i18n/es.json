@@ -5,6 +5,8 @@
         "SEARCH": "Buscar joyas...",
         "WHATSAPP_ORDER": "Pedir por WhatsApp",
         "CONTACT": "Contacto",
+        "LOCATION": "Ubicación",
+        "VIEW_MAP": "Ver en el mapa",
         "ALL": "Todos",
         "CURRENCY": "USD",
         "ASSISTANT": "Asistente",
@@ -12,13 +14,15 @@
         "DEALS_OF_DAY": "Ofertas del Día",
         "OFFER": "Oferta",
         "STEP": "Paso",
-        "BACK": "Anterior",
-        "NEXT": "Siguiente",
-        "FINISH": "Finalizar",
+        "PREVIOUS": "Anterior",
+        "CONTINUE": "Continuar",
+        "FINISH": "Finalizar Pedido",
+        "ORDER": "Pedir",
         "ORDER_NOW": "Pedir ahora",
         "SUMMARY": "Resumen del Pedido",
         "SHARE_ORDER": "Copiar / Compartir",
-        "RESERVE": "Reservar"
+        "RESERVE": "Reservar",
+        "RESERVE_WA": "Reservar (WhatsApp)"
     },
     "CATEGORIES": {
         "anillos": "Anillos",
@@ -39,26 +43,6 @@
         "3": {
             "name": "Collar de Perlas Australianas",
             "desc": "Perlas naturales con broche de plata."
-        },
-        "4": {
-            "name": "Gargantilla de Zafiro",
-            "desc": "Piedra preciosa tallada a mano."
-        },
-        "5": {
-            "name": "Pulsera de Tenis",
-            "desc": "Hilera continua de cristales finos."
-        },
-        "6": {
-            "name": "Pendientes de Aro Solitario",
-            "desc": "Simplicidad y brillo diario."
-        },
-        "7": {
-            "name": "Reloj Cronógrafo Elite",
-            "desc": "Maquinaria suiza, correa de cuero."
-        },
-        "8": {
-            "name": "Reloj de Lujo Edición Oro",
-            "desc": "Bañado en oro de 24k, cristal de zafiro."
         }
     }
 }

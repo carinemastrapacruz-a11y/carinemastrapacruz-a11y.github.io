@@ -1,11 +1,12 @@
 {
     "COMMON": {
-        "ORDER": "Order",
-        "RESERVE": "Reserve",
-        "RESERVE_WA": "Reserve Space",
+        "WELCOME": "Welcome to",
+        "CATEGORIES": "Categories",
+        "SEARCH": "Search jewelry...",
+        "WHATSAPP_ORDER": "Order via WhatsApp",
         "CONTACT": "Contact",
         "LOCATION": "Location",
-        "VIEW_MAP": "View in Google Maps",
+        "VIEW_MAP": "View on map",
         "ALL": "All",
         "CURRENCY": "USD",
         "ASSISTANT": "Assistant",
@@ -13,12 +14,14 @@
         "DEALS_OF_DAY": "Deals of the Day",
         "OFFER": "Special Offer",
         "STEP": "Step",
-        "BACK": "Back",
-        "NEXT": "Next",
-        "CONTINUE": "Continue",
-        "ORDER_NOW": "Fast Order",
-        "FINISH": "Finish & Order",
         "PREVIOUS": "Previous",
-        "WHATSAPP_ORDER": "Order via WhatsApp"
+        "CONTINUE": "Continue",
+        "FINISH": "Finish Order",
+        "ORDER": "Order",
+        "ORDER_NOW": "Order Now",
+        "SUMMARY": "Order Summary",
+        "SHARE_ORDER": "Copy / Share",
+        "RESERVE": "Reserve",
+        "RESERVE_WA": "Reserve (WhatsApp)"
     }
 }

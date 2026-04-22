@@ -6,7 +6,9 @@
         "whatsapp": "+1234567890",
         "address": "Calle Real 123, Madrid, España",
         "location_url": "https://goo.gl/maps/example",
-        "owner_contact": "+1234567891"
+        "owner_contact": "+1234567891",
+        "announcement_es": "¡Envío gratis en compras superiores a $1500!",
+        "announcement_en": "Free shipping on orders over $1500!"
     },
     "categories": [
         {
