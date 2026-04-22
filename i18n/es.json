@@ -15,7 +15,8 @@
         "FINISH": "Finalizar",
         "ORDER_NOW": "Pedir ahora",
         "SUMMARY": "Resumen del Pedido",
-        "SHARE_ORDER": "Copiar / Compartir"
+        "SHARE_ORDER": "Copiar / Compartir",
+        "RESERVE": "Reservar"
     },
     "CATEGORIES": {
         "anillos": "Anillos",

@@ -15,7 +15,8 @@
         "FINISH": "Finish",
         "ORDER_NOW": "Order Now",
         "SUMMARY": "Order Summary",
-        "SHARE_ORDER": "Copy / Share"
+        "SHARE_ORDER": "Copy / Share",
+        "RESERVE": "Reserve"
     },
     "CATEGORIES": {
         "anillos": "Rings",
