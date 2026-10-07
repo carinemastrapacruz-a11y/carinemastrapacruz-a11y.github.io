@@ -1,1 +1,155 @@
-{"store":{"name":"Rey Joyería","description_es":"Exclusividad y Brillo en cada detalle","whatsapp":"+5354267103","address":"Calle Real 123, Madrid, España","location_url":"https://goo.gl/maps/example","owner_contact":"+1234567891","announcement_es":"mi anuncio 🪧"},"categories":[{"id":"anillos","name_es":"Anillos","name_en":"Rings","icon":"💍"},{"id":"collares","name_es":"Collares","name_en":"Necklaces","icon":"📿"},{"id":"pulseras","name_es":"Pulseras","name_en":"Bracelets","icon":"⌚"},{"id":"pendientes","name_es":"Pendientes","name_en":"Earrings","icon":"✨"},{"id":"relojes","name_es":"Relojes","name_en":"Watches","icon":"🕒"}],"products":[{"id":1,"category":"anillos","name_es":"Anillo de Diamante Eterno","name_en":"Eternal Diamond Ring","desc_es":"","price":1200.0,"stock":0,"is_offer":false,"is_deal_of_day":false,"image":"images/product_1776964209500.webp"},{"id":2,"category":"anillos","name_es":"Alianza de Oro Rosa","name_en":"Rose Gold Wedding Band","desc_es":"","price":2500.0,"stock":0,"is_offer":true,"is_deal_of_day":true,"image":"images/product_1776963402215.webp","discount_price":2100.0},{"id":3,"category":"collares","name_es":"Collar de Perlas Australianas","name_en":"Australian Pearl Necklace","desc_es":"","price":3800.0,"stock":0,"is_offer":false,"is_deal_of_day":false,"image":"images/product_1776963539306.webp"},{"id":4,"category":"collares","name_es":"Gargantilla de Zafiro","name_en":"Sapphire Choker","desc_es":"","price":1500.0,"stock":0,"is_offer":false,"is_deal_of_day":false,"image":"images/product_1776963717761.webp"},{"id":5,"category":"pulseras","name_es":"Pulsera Tennis","name_en":"Tennis Bracelet","desc_es":"","price":950.0,"stock":0,"is_offer":true,"is_deal_of_day":true,"image":"images/product_1776963827198.webp","discount_price":760.0},{"id":6,"category":"pendientes","name_es":"Aros Solitarios","name_en":"Solitary Hoop Earrings","desc_es":"","price":600.0,"stock":0,"is_offer":true,"is_deal_of_day":false,"image":"images/product_1780583071653.webp","discount_price":400.0},{"id":7,"category":"relojes","name_es":"Reloj Chrono Elite","name_en":"Elite Chrono Watch","desc_es":"","price":5000.0,"stock":0,"is_offer":false,"is_deal_of_day":false,"image":"images/product_1776964012257.webp"},{"id":8,"category":"relojes","name_es":"Lujo Edición Oro","name_en":"Gold Edition Luxury","desc_es":"","price":12000.0,"stock":0,"is_offer":true,"is_deal_of_day":false,"image":"images/product_1776964136142.webp","discount_price":10800.0}]}
+{
+    "store": {
+        "name": "Mi Desván",
+        "description_es": "Venta de Garaje — Tesoros únicos con historia",
+        "description_en": "Garage Sale — Unique treasures with a story",
+        "whatsapp": "+5354267103",
+        "address": "Calle Real 123, Madrid, España",
+        "location_url": "https://goo.gl/maps/example",
+        "owner_contact": "+1234567891",
+        "announcement_es": "✨ ¡Gran Venta de Garaje! Precios especiales solo por este fin de semana ✨",
+        "announcement_en": "✨ Big Garage Sale! Special prices this weekend only ✨"
+    },
+    "categories": [
+        {
+            "id": "anillos",
+            "icon": "💍",
+            "name_es": "Anillos",
+            "name_en": "Rings"
+        },
+        {
+            "id": "collares",
+            "icon": "📿",
+            "name_es": "Collares",
+            "name_en": "Necklaces"
+        },
+        {
+            "id": "pulseras",
+            "icon": "⌚",
+            "name_es": "Pulseras",
+            "name_en": "Bracelets"
+        },
+        {
+            "id": "pendientes",
+            "icon": "✨",
+            "name_es": "Pendientes",
+            "name_en": "Earrings"
+        },
+        {
+            "id": "relojes",
+            "icon": "🕒",
+            "name_es": "Relojes",
+            "name_en": "Watches"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "category": "anillos",
+            "price": 1200,
+            "stock": 1,
+            "image": "images/product_1776964209500.webp",
+            "name_es": "Anillo de Diamante Eterno",
+            "name_en": "Eternal Diamond Ring",
+            "desc_es": "Pieza única de Mi Desván. Escríbenos por WhatsApp para más detalles.",
+            "desc_en": "",
+            "is_offer": false,
+            "is_deal_of_day": false
+        },
+        {
+            "id": 2,
+            "category": "anillos",
+            "price": 2500,
+            "stock": 1,
+            "image": "images/product_1776963402215.webp",
+            "name_es": "Alianza de Oro Rosa",
+            "name_en": "Rose Gold Wedding Band",
+            "desc_es": "Pieza única de Mi Desván. Escríbenos por WhatsApp para más detalles.",
+            "desc_en": "",
+            "is_offer": true,
+            "discount_price": 2100,
+            "is_deal_of_day": true
+        },
+        {
+            "id": 3,
+            "category": "collares",
+            "price": 3800,
+            "stock": 1,
+            "image": "images/product_1776963539306.webp",
+            "name_es": "Collar de Perlas Australianas",
+            "name_en": "Australian Pearl Necklace",
+            "desc_es": "Pieza única de Mi Desván. Escríbenos por WhatsApp para más detalles.",
+            "desc_en": "",
+            "is_offer": false,
+            "is_deal_of_day": false
+        },
+        {
+            "id": 4,
+            "category": "collares",
+            "price": 1500,
+            "stock": 1,
+            "image": "images/product_1776963717761.webp",
+            "name_es": "Gargantilla de Zafiro",
+            "name_en": "Sapphire Choker",
+            "desc_es": "Pieza única de Mi Desván. Escríbenos por WhatsApp para más detalles.",
+            "desc_en": "",
+            "is_offer": false,
+            "is_deal_of_day": false
+        },
+        {
+            "id": 5,
+            "category": "pulseras",
+            "price": 950,
+            "stock": 1,
+            "image": "images/product_1776963827198.webp",
+            "name_es": "Pulsera Tennis",
+            "name_en": "Tennis Bracelet",
+            "desc_es": "Pieza única de Mi Desván. Escríbenos por WhatsApp para más detalles.",
+            "desc_en": "",
+            "is_offer": true,
+            "discount_price": 760,
+            "is_deal_of_day": true
+        },
+        {
+            "id": 6,
+            "category": "pendientes",
+            "price": 600,
+            "stock": 1,
+            "image": "images/product_1780583071653.webp",
+            "name_es": "Aros Solitarios",
+            "name_en": "Solitary Hoop Earrings",
+            "desc_es": "Pieza única de Mi Desván. Escríbenos por WhatsApp para más detalles.",
+            "desc_en": "",
+            "is_offer": true,
+            "discount_price": 400,
+            "is_deal_of_day": false
+        },
+        {
+            "id": 7,
+            "category": "relojes",
+            "price": 5000,
+            "stock": 1,
+            "image": "images/product_1776964012257.webp",
+            "name_es": "Reloj Chrono Elite",
+            "name_en": "Elite Chrono Watch",
+            "desc_es": "Pieza única de Mi Desván. Escríbenos por WhatsApp para más detalles.",
+            "desc_en": "",
+            "is_offer": false,
+            "is_deal_of_day": false
+        },
+        {
+            "id": 8,
+            "category": "relojes",
+            "price": 12000,
+            "stock": 1,
+            "image": "images/product_1776964136142.webp",
+            "name_es": "Lujo Edición Oro",
+            "name_en": "Gold Edition Luxury",
+            "desc_es": "Pieza única de Mi Desván. Escríbenos por WhatsApp para más detalles.",
+            "desc_en": "",
+            "is_offer": true,
+            "discount_price": 10800,
+            "is_deal_of_day": false
+        }
+    ]
+}

@@ -1,0 +1,416 @@
+/* ============================================================
+   MI DESVÁN — Venta de Garaje
+   Tema elegante y profesional / productos protagonistas
+   Sobrescribe el tema oscuro original (Luxe) sin recompilar.
+   Todo lleva !important para vencer al CSS encapsulado Angular.
+   ============================================================ */
+
+:root,
+body,
+app-root {
+  --primary: #9a5b2e !important;
+  --primary-rgb: 154, 91, 46 !important;
+  --primary-color: #9a5b2e !important;
+  --primary-hover: #7c4522 !important;
+  --bg-dark: #faf6ef !important;
+  --bg-color: #faf6ef !important;
+  --card-bg: #ffffff !important;
+  --text-main: #2b2118 !important;
+  --text-muted: #7a6f65 !important;
+  --accent-color: #2f5233 !important;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif !important;
+  --font-main: "Inter", system-ui, -apple-system, sans-serif !important;
+}
+
+/* ---------- Base ---------- */
+body {
+  background-color: #faf6ef !important;
+  background-image:
+    radial-gradient(circle at 15% 0%, #f3e8d5 0%, transparent 45%),
+    radial-gradient(circle at 90% 20%, #ecdfc8 0%, transparent 40%),
+    linear-gradient(#faf6ef, #f6f0e3) !important;
+  color: #2b2118 !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+}
+
+h1, h2, h3, .premium-title, .section-title {
+  font-family: "Fraunces", Georgia, serif !important;
+  letter-spacing: 0.3px !important;
+}
+
+.gold-text {
+  color: #9a5b2e !important;
+  text-shadow: none !important;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid #e9dfd0 !important;
+  box-shadow: 0 8px 24px rgba(43, 33, 24, 0.06) !important;
+}
+
+/* ---------- Cinta superior ---------- */
+.announcement-marquee {
+  background: linear-gradient(90deg, #2f5233, #9a5b2e, #2f5233) !important;
+  color: #fdf8ee !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+}
+.announcement-marquee .marquee-content span {
+  color: #fdf8ee !important;
+  text-shadow: none !important;
+}
+
+/* ---------- Header ---------- */
+.main-header {
+  background: rgba(250, 246, 239, 0.9) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid #e9dfd0 !important;
+}
+.main-header .header-content .mini-logo {
+  color: #2b2118 !important;
+  letter-spacing: 1.5px !important;
+}
+.main-header .header-content .mini-logo::before {
+  content: "◈ ";
+  color: #9a5b2e !important;
+}
+
+.actions .assistant-btn,
+.actions .lang-toggle {
+  background: #fff !important;
+  border: 1px solid #d9c9ae !important;
+  color: #7c4522 !important;
+}
+.actions .assistant-btn:hover,
+.actions .lang-toggle:hover {
+  background: #9a5b2e !important;
+  border-color: #9a5b2e !important;
+  color: #fff !important;
+}
+
+/* ---------- Hero: presentación elegante ---------- */
+.hero {
+  background:
+    radial-gradient(circle at 50% 0%, #fffdf6 0%, #f6eeda 55%, #efe2c8 100%) !important;
+  border-bottom: 1px solid #e2d3b8 !important;
+  height: auto !important;
+  min-height: 440px !important;
+  padding: 70px 0 60px !important;
+}
+.hero .hero-overlay {
+  background: radial-gradient(circle at center, rgba(154, 91, 46, 0.12) 0%, transparent 70%) !important;
+}
+.hero .hero-content::before {
+  content: "VENTA DE GARAJE · PIEZAS ÚNICAS" !important;
+  display: inline-block !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 3px !important;
+  color: #fdf8ee !important;
+  background: #2f5233 !important;
+  padding: 8px 20px !important;
+  border-radius: 50px !important;
+  margin-bottom: 22px !important;
+}
+.hero .hero-content h1 {
+  color: #2b2118 !important;
+  text-shadow: none !important;
+  font-weight: 700 !important;
+  line-height: 1.05 !important;
+}
+.hero .hero-content p {
+  color: #7a6f65 !important;
+  font-style: normal !important;
+  font-size: 1.15rem !important;
+}
+.hero .hero-content p::after {
+  content: "Precios de remate · Se apartan por WhatsApp · Solo este fin de semana";
+  display: block !important;
+  margin-top: 14px !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  color: #9a5b2e !important;
+}
+
+/* Decoración flotante más sutil en tema claro */
+.floating-decorations .float-item {
+  opacity: 0.14 !important;
+}
+
+/* ---------- Categorías ---------- */
+.category-pill {
+  background: #fff !important;
+  border: 1px solid #e2d3b8 !important;
+  color: #7a6f65 !important;
+  box-shadow: 0 2px 8px rgba(43, 33, 24, 0.05) !important;
+}
+.category-pill:hover,
+.category-pill.active {
+  border-color: #9a5b2e !important;
+  color: #fff !important;
+  background: #9a5b2e !important;
+}
+
+/* ---------- Tarjetas: las protagonistas ---------- */
+.products-grid {
+  gap: 28px !important;
+}
+.product-card,
+.deal-card {
+  background: #fff !important;
+  border: 1px solid #e9dfd0 !important;
+  border-radius: 22px !important;
+  box-shadow: 0 10px 30px rgba(43, 33, 24, 0.08) !important;
+  overflow: hidden !important;
+}
+.product-card:hover,
+.deal-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: #c9a878 !important;
+  box-shadow: 0 20px 45px rgba(154, 91, 46, 0.18) !important;
+}
+.product-card.highlight-offer {
+  border: 1.5px solid #9a5b2e !important;
+  box-shadow: 0 0 0 4px rgba(154, 91, 46, 0.1), 0 14px 34px rgba(43, 33, 24, 0.1) !important;
+}
+.product-card .product-image,
+.deal-card .deal-img {
+  background: #efe7d6 !important;
+  height: 280px !important;
+}
+.product-card .product-image img,
+.deal-card .deal-img img {
+  object-fit: cover !important;
+}
+.product-card .product-image .luxury-placeholder,
+.deal-card .deal-img .placeholder {
+  opacity: 0.25 !important;
+}
+.product-card .product-image .hover-overlay {
+  background: rgba(43, 33, 24, 0.55) !important;
+  color: #fdf8ee !important;
+}
+.product-card .product-info h3,
+.deal-card h3 {
+  color: #2b2118 !important;
+}
+.product-card .product-info .description {
+  color: #7a6f65 !important;
+}
+.product-footer .price-container .price-gold,
+.deal-card .price-box .new-price {
+  color: #9a5b2e !important;
+}
+.product-footer .price-container .old-price-small,
+.deal-card .price-box .old-price {
+  color: #a89a8a !important;
+}
+
+/* Etiquetas de oferta: terracota cálida */
+.product-card .offer-tag,
+.deal-card .deal-badge {
+  background: #c4502b !important;
+  color: #fff !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 12px rgba(196, 80, 43, 0.4) !important;
+}
+
+/* ---------- Botones ---------- */
+.premium-button,
+.luxe-btn,
+.luxury-modal .wizard-footer .luxe-btn-gold {
+  background: linear-gradient(135deg, #9a5b2e, #c98d54) !important;
+  color: #fff !important;
+  box-shadow: 0 6px 18px rgba(154, 91, 46, 0.35) !important;
+  text-transform: none !important;
+  letter-spacing: 0.5px !important;
+}
+.premium-button:hover,
+.luxe-btn:hover {
+  filter: brightness(1.05) !important;
+  transform: translateY(-2px) !important;
+}
+.action-buttons .reserve-btn,
+.luxury-modal .wizard-footer .luxe-outline-btn,
+.qty-btn {
+  border-color: #9a5b2e !important;
+  color: #9a5b2e !important;
+}
+.action-buttons .reserve-btn:hover,
+.qty-btn.plus {
+  background: #9a5b2e !important;
+  color: #fff !important;
+}
+
+/* ---------- Modal / carrito ---------- */
+.wizard-overlay {
+  background: rgba(43, 33, 24, 0.55) !important;
+}
+.luxury-modal {
+  background: #fffdf8 !important;
+  border: 1px solid #e9dfd0 !important;
+  box-shadow: 0 25px 60px rgba(43, 33, 24, 0.3) !important;
+}
+.luxury-modal .wizard-header,
+.luxury-modal .wizard-footer,
+.luxury-modal .wizard-item {
+  background: #faf6ef !important;
+  border-color: #e9dfd0 !important;
+}
+.luxury-modal .wizard-header h2,
+.luxury-modal .wizard-item .item-details h4 {
+  color: #2b2118 !important;
+}
+.luxury-modal .wizard-header .close-btn {
+  color: #2b2118 !important;
+}
+.luxury-modal .wizard-item .item-visual {
+  background: #efe7d6 !important;
+}
+.luxury-modal .wizard-progress .progress-bar-container {
+  background: #e9dfd0 !important;
+}
+.luxury-modal .wizard-progress .progress-fill {
+  background: #9a5b2e !important;
+}
+.qty-stepper {
+  background: #fff !important;
+  border: 1px solid #e9dfd0 !important;
+}
+.qty-stepper .step-btn {
+  color: #9a5b2e !important;
+}
+.floating-cart {
+  background: #fffdf8 !important;
+  border: 1.5px solid #9a5b2e !important;
+  box-shadow: 0 12px 35px rgba(43, 33, 24, 0.2) !important;
+}
+.floating-cart .cart-details .total {
+  color: #9a5b2e !important;
+}
+.floating-cart .cart-details .action {
+  color: #7a6f65 !important;
+}
+.floating-cart .cart-icon .badge {
+  background: #c4502b !important;
+  color: #fff !important;
+}
+
+/* ---------- Footer elegante chocolate ---------- */
+.main-footer {
+  background: #2b2118 !important;
+  border-top: 3px solid #9a5b2e !important;
+  color: #f3e8d5 !important;
+}
+.main-footer h3,
+.main-footer h4 {
+  color: #fdf8ee !important;
+}
+.main-footer p {
+  color: #cbbfae !important;
+}
+.main-footer .footer-bottom {
+  border-top: 1px solid rgba(253, 248, 238, 0.15) !important;
+  color: #a89a8a !important;
+}
+.main-footer a {
+  color: #e8c99a !important;
+}
+
+/* ---------- Buscador y títulos de sección ---------- */
+.section-title {
+  color: #2b2118 !important;
+}
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #9a5b2e;
+  border-radius: 3px;
+  margin: 12px auto 0;
+}
+input[type="search"],
+input[type="text"] {
+  background: #fff !important;
+  border: 1px solid #e2d3b8 !important;
+  color: #2b2118 !important;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 380px !important;
+    padding: 50px 0 45px !important;
+  }
+}
+
+/* ============================================================
+   MI DESVÁN — Pieza única: UN SOLO BOTÓN por tarjeta
+   Cada producto tiene stock:1 en menu.json (límite lógico).
+   La tarjeta muestra "Apartar" y, una vez agregado,
+   ese mismo botón pasa a ser "✓ Apartado".
+   ============================================================ */
+
+/* 1) Fuera el botón duplicado "Reservar" de las tarjetas
+      (el contacto por WhatsApp sigue en la foto, el carrito y el pie) */
+.product-card .reserve-btn {
+  display: none !important;
+}
+
+/* 2) Fuera el stepper (- 1 +) de las tarjetas */
+.product-card .qty-btn,
+.product-card .qty-num {
+  display: none !important;
+}
+
+/* 3) El mismo botón cambia de estado: si hay cantidad marcada
+      (.qty-num solo existe cuando la pieza ya está apartada),
+      se muestra el sello "✓ Apartado" en su lugar */
+.product-card .action-buttons:has(.qty-num)::after {
+  content: "✓ Apartado" !important;
+  display: inline-block !important;
+  background: #2f5233 !important;
+  color: #fdf8ee !important;
+  padding: 8px 18px !important;
+  border-radius: 50px !important;
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 12px rgba(47, 82, 51, 0.3) !important;
+}
+/* Seguridad extra: ningún stepper visible en tarjetas destacadas */
+.deal-card .qty-btn,
+.deal-card .qty-num {
+  display: none !important;
+}
+
+/* 4) Asistente: el "+" solo cuando la pieza aún NO está agregada
+      (.qty solo existe cuando ya hay cantidad) */
+.qty-stepper:has(.qty) .step-btn.plus {
+  display: none !important;
+}
+/* El "-" del asistente pasa a ser "Quitar"
+   (con 1 pieza, restar = quitar del apartado) */
+.qty-stepper .step-btn:not(.plus) {
+  font-size: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 6px 14px !important;
+  border-radius: 50px !important;
+}
+.qty-stepper .step-btn:not(.plus)::after {
+  content: "Quitar" !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+}
+/* El número "1" es redundante: se oculta, cada pieza es única */
+.qty-stepper .qty {
+  display: none !important;
+}

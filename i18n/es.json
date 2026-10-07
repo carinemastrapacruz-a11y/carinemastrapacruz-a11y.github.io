@@ -2,27 +2,27 @@
     "COMMON": {
         "WELCOME": "Bienvenido a",
         "CATEGORIES": "Categorías",
-        "SEARCH": "Buscar joyas...",
-        "WHATSAPP_ORDER": "Pedir por WhatsApp",
+        "SEARCH": "Buscar tesoros...",
+        "WHATSAPP_ORDER": "Preguntar por WhatsApp",
         "CONTACT": "Contacto",
-        "LOCATION": "Ubicación",
+        "LOCATION": "Dónde estamos",
         "VIEW_MAP": "Ver en el mapa",
-        "ALL": "Todos",
+        "ALL": "Todo",
         "CURRENCY": "USD",
         "ASSISTANT": "Asistente",
-        "ASSISTANT_TITLE": "Asistente de Pedidos",
-        "DEALS_OF_DAY": "Ofertas del Día",
-        "OFFER": "Oferta",
+        "ASSISTANT_TITLE": "Tu lista del Desván",
+        "DEALS_OF_DAY": "Destacados del Desván",
+        "OFFER": "Remate",
         "STEP": "Paso",
         "PREVIOUS": "Anterior",
         "CONTINUE": "Continuar",
-        "FINISH": "Finalizar Pedido",
-        "ORDER": "Pedir",
-        "ORDER_NOW": "Pedir ahora",
-        "SUMMARY": "Resumen del Pedido",
+        "FINISH": "Apartar piezas",
+        "ORDER": "Apartar",
+        "ORDER_NOW": "Apartar ahora",
+        "SUMMARY": "Tu apartado",
         "SHARE_ORDER": "Copiar / Compartir",
-        "RESERVE": "Reservar",
-        "RESERVE_WA": "Reservar (WhatsApp)"
+        "RESERVE": "Apartar",
+        "RESERVE_WA": "Apartar (WhatsApp)"
     },
     "CATEGORIES": {
         "anillos": "Anillos",
@@ -34,15 +34,35 @@
     "PRODUCTS": {
         "1": {
             "name": "Anillo de Diamante Eterno",
-            "desc": "Oro blanco de 18k con diamante central."
+            "desc": "Pieza única de Mi Desván."
         },
         "2": {
             "name": "Alianza de Oro Rosa",
-            "desc": "Diseño clásico y elegante."
+            "desc": "Pieza única de Mi Desván."
         },
         "3": {
             "name": "Collar de Perlas Australianas",
-            "desc": "Perlas naturales con broche de plata."
+            "desc": "Pieza única de Mi Desván."
+        },
+        "4": {
+            "name": "Gargantilla de Zafiro",
+            "desc": "Pieza única de Mi Desván."
+        },
+        "5": {
+            "name": "Pulsera Tennis",
+            "desc": "Pieza única de Mi Desván."
+        },
+        "6": {
+            "name": "Aros Solitarios",
+            "desc": "Pieza única de Mi Desván."
+        },
+        "7": {
+            "name": "Reloj Chrono Elite",
+            "desc": "Pieza única de Mi Desván."
+        },
+        "8": {
+            "name": "Lujo Edición Oro",
+            "desc": "Pieza única de Mi Desván."
         }
     }
 }
